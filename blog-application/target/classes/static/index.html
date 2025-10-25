@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        input, button, textarea { margin: 5px 0; padding: 5px; }
+        .post { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        textarea { width: 100%; height: 60px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Search Posts</h2>
+    <input type="text" id="searchKeyword" placeholder="Search by title">
+    <button onclick="searchPosts()">Search</button>
+    <br>
+    <input type="text" id="searchAuthor" placeholder="Search by author">
+    <button onclick="searchByAuthor()">Search</button>
+    <br>
+    <button onclick="clearSearch()">Clear Search</button>
+
+    <h2>Create / Edit Post</h2>
+    <input type="hidden" id="postId">
+    <input type="text" id="title" placeholder="Title">
+    <input type="text" id="author" placeholder="Author">
+    <textarea id="content" placeholder="Content"></textarea>
+    <br>
+    <button onclick="createOrUpdatePost()">Save Post</button>
+    <button onclick="clearForm()">Clear Form</button>
+
+    <h2>Posts</h2>
+    <div id="postsContainer"></div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

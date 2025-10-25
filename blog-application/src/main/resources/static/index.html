@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Blog Manager</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        input, button, textarea { margin: 5px 0; padding: 5px; width: 100%; box-sizing: border-box; }
+        button { width: auto; margin-right: 5px; cursor: pointer; }
+        .post { border: 1px solid #ccc; padding: 10px; margin: 10px 0; position: relative; }
+        .post-buttons { position: absolute; top: 10px; right: 10px; }
+        .post-buttons button { margin-left: 5px; }
+        h2 { margin-top: 30px; }
+        .suggestions { border: 1px solid #ccc; background: #fff; max-height: 100px; overflow-y: auto; position: absolute; width: calc(100% - 12px); z-index: 1000; }
+        .suggestion-item { padding: 5px; cursor: pointer; }
+        .suggestion-item:hover { background: #f0f0f0; }
+        .error { color: red; font-size: 0.9em; }
+        .input-container { position: relative; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Search Section -->
+    <h2>Search Posts</h2>
+    <div class="input-container">
+        <input type="text" id="searchKeyword" placeholder="Search by title">
+        <div id="titleSuggestions" class="suggestions" style="display:none;"></div>
+    </div>
+    <div class="input-container">
+        <input type="text" id="searchAuthor" placeholder="Search by author">
+        <div id="authorSuggestions" class="suggestions" style="display:none;"></div>
+    </div>
+    <button onclick="searchPosts()">Search</button>
+    <button onclick="clearSearch()">Clear Search</button>
+
+    <!-- Create / Edit Post Section -->
+    <h2>Create / Edit Post</h2>
+    <input type="hidden" id="postId">
+    <input type="text" id="title" placeholder="Title">
+    <div id="titleError" class="error"></div>
+    <input type="text" id="author" placeholder="Author">
+    <div id="authorError" class="error"></div>
+    <textarea id="content" placeholder="Content"></textarea>
+    <div id="contentError" class="error"></div>
+    <button onclick="createOrUpdatePost()">Save Post</button>
+    <button onclick="clearForm()">Clear Form</button>
+
+    <!-- Posts Display Section -->
+    <h2>Posts</h2>
+    <div id="postsContainer"></div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
