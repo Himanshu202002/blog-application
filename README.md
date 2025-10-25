@@ -41,4 +41,4 @@ A full-stack **Blog Application** built with **Spring Boot** and **MongoDB**, al
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Himanshu20220/blog-application.git
+https://github.com/Himanshu202002/blog-application
